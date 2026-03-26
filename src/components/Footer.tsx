@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { Linkedin, Mail } from "lucide-react";
+import { JamTechLogo } from "@/components/JamTechLogo";
 
 export default function Footer() {
   return (
@@ -9,12 +11,13 @@ export default function Footer() {
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           {/* Left - Logo and tagline */}
           <div className="flex flex-col gap-3">
-            <a href="/" className="flex items-center gap-2 text-base font-bold text-foreground">
-              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent text-xs font-extrabold text-black">
-                JT
-              </div>
-              <span>Jam Tech</span>
-            </a>
+            <Link
+              href="/"
+              className="flex items-center text-foreground"
+              aria-label="JamTech home"
+            >
+              <JamTechLogo variant="footer" />
+            </Link>
             <p className="max-w-xs text-sm text-muted">
               Practical workshops for early-career tech professionals
             </p>
@@ -24,12 +27,12 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <h3 className="text-sm font-semibold text-foreground">Navigation</h3>
             <div className="flex flex-col gap-2 text-sm text-muted">
-              <a href="/#about" className="transition-colors hover:text-foreground">
+              <Link href="/#about" className="transition-colors hover:text-foreground">
                 About
-              </a>
-              <a href="/#workshops" className="transition-colors hover:text-foreground">
+              </Link>
+              <Link href="/#workshops" className="transition-colors hover:text-foreground">
                 Workshops
-              </a>
+              </Link>
               <a href="/contact" className="transition-colors hover:text-foreground">
                 Contact
               </a>

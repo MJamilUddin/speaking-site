@@ -1,12 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { JamTechLogo } from "@/components/JamTechLogo";
 import { Gravity, MatterBody } from "@/components/ui/gravity";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-28 pb-4 lg:pt-24">
+    <section className="relative flex min-h-0 items-start overflow-hidden px-6 pt-12 pb-10 lg:min-h-screen lg:items-center lg:pb-4 lg:pt-28">
       {/* Mobile background image with tint */}
       <div className="absolute inset-0 lg:hidden">
         <Image
@@ -24,12 +26,12 @@ export default function Hero() {
       <motion.div
         animate={{ opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute top-32 left-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl"
+        className="pointer-events-none absolute top-32 left-20 hidden h-72 w-72 rounded-full bg-accent/10 blur-3xl lg:block"
       />
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-2">
         {/* Left side - Content with Gravity Blocks */}
-        <div className="relative text-left pb-40 lg:pb-48">
+        <div className="relative pb-8 text-left lg:pb-48">
           {/* Gravity blocks falling around the text — extends to fill the padded area */}
           <div className="pointer-events-auto absolute inset-0 hidden lg:block" style={{ zIndex: 0 }}>
             <Gravity
@@ -117,6 +119,21 @@ export default function Hero() {
               </MatterBody>
             </Gravity>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative z-10 mb-8 flex w-full justify-start lg:mb-10"
+          >
+            <Link
+              href="/"
+              aria-label="JamTech home"
+              className="block w-full text-foreground"
+            >
+              <JamTechLogo variant="hero" />
+            </Link>
+          </motion.div>
 
           {/* Heading */}
           <motion.h1

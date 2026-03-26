@@ -62,6 +62,15 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: [
+      {
+        url: "/Jamtech%20logos/JamTech%20Logo%20small.png",
+        type: "image/png",
+      },
+    ],
+    apple: "/Jamtech%20logos/JamTech%20Logo%20small.png",
+  },
 };
 
 export default function RootLayout({
