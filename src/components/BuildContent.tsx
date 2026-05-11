@@ -159,7 +159,7 @@ export default function BuildContent() {
                       )}
                       <div>
                         <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted">
-                          {"role" in project ? project.role : project.client}
+                          {project.role}
                         </span>
                         {"period" in project && (
                           <p className="font-mono text-xs text-muted/60">{project.period}</p>
