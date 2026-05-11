@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, User, MessageSquare, Send, CheckCircle, AlertCircle } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -17,6 +15,7 @@ export default function ContactPage() {
     name: "",
     email: "",
     company: "",
+    service: "",
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -39,8 +38,9 @@ export default function ContactPage() {
           name: formData.name,
           email: formData.email,
           company: formData.company || "Not provided",
+          service: formData.service || "Not specified",
           message: formData.message,
-          subject: `New Workshop Inquiry from ${formData.name}`,
+          subject: `New Inquiry${formData.service ? ` — ${formData.service}` : ""} from ${formData.name}`,
         }),
       });
 
@@ -48,7 +48,7 @@ export default function ContactPage() {
 
       if (result.success) {
         setStatus("success");
-        setFormData({ name: "", email: "", company: "", message: "" });
+        setFormData({ name: "", email: "", company: "", service: "", message: "" });
       } else {
         setStatus("error");
         setErrorMessage(result.message || "Something went wrong. Please try again.");
@@ -67,9 +67,7 @@ export default function ContactPage() {
   };
 
   return (
-    <>
-      <Navbar />
-      <section className="relative min-h-screen px-6 py-24 sm:py-32">
+    <section className="relative min-h-screen px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-4xl">
         {/* Header */}
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="mb-12 text-center">
@@ -80,8 +78,8 @@ export default function ContactPage() {
             Let&apos;s Work Together
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-            Interested in booking a workshop? Have questions about what I offer? Fill out the form
-            below and I&apos;ll get back to you as soon as possible.
+            Whether you need engineering, strategy, or education &mdash; let&apos;s talk. Fill out
+            the form below and I&apos;ll get back to you as soon as possible.
           </p>
         </motion.div>
 
@@ -114,11 +112,11 @@ export default function ContactPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                  <span>Custom workshop proposals</span>
+                  <span>Scoped proposals tailored to your needs</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                  <span>Flexible scheduling options</span>
+                  <span>Flexible engagement options</span>
                 </li>
               </ul>
             </div>
@@ -208,6 +206,31 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    {/* Service */}
+                    <div>
+                      <label className="mb-3 block text-sm font-medium text-foreground">
+                        What are you interested in?
+                      </label>
+                      <div className="flex flex-wrap gap-3">
+                        {["Build", "Advise", "Teach", "Other"].map((option) => (
+                          <button
+                            key={option}
+                            type="button"
+                            onClick={() =>
+                              setFormData({ ...formData, service: option })
+                            }
+                            className={`rounded-full border px-5 py-2 text-sm font-medium transition-all ${
+                              formData.service === option
+                                ? "border-accent bg-accent/10 text-accent"
+                                : "border-card-border text-muted hover:border-foreground/30 hover:text-foreground"
+                            }`}
+                          >
+                            {option}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
                     {/* Message */}
                     <div>
                       <label htmlFor="message" className="mb-2 block text-sm font-medium text-foreground">
@@ -223,7 +246,7 @@ export default function ContactPage() {
                           required
                           rows={6}
                           className="w-full rounded-xl border border-card-border bg-background py-3 pl-12 pr-4 text-foreground placeholder-muted transition-all focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-                          placeholder="Tell me about your workshop needs, audience size, preferred dates, or any questions you have..."
+                          placeholder="Tell me about your project, goals, or any questions you have..."
                         />
                       </div>
                     </div>
@@ -266,7 +289,5 @@ export default function ContactPage() {
         </div>
       </div>
     </section>
-    <Footer />
-    </>
   );
 }

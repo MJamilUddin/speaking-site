@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Jam Tech — Tech Career Workshops & Speaking";
+export const alt = "JamTech — Build. Advise. Teach.";
 export const size = {
   width: 1200,
   height: 630,
@@ -71,7 +71,7 @@ export default function OGImage() {
               letterSpacing: "-0.5px",
             }}
           >
-            Jam Tech
+            JamTech
           </span>
         </div>
 
@@ -87,7 +87,7 @@ export default function OGImage() {
             marginBottom: "24px",
           }}
         >
-          Helping people launch successful careers in tech
+          Technology that ships. Strategy that scales.
         </div>
 
         {/* Subtitle */}
@@ -99,7 +99,7 @@ export default function OGImage() {
             maxWidth: "700px",
           }}
         >
-          Practical workshops for students, graduates, and career switchers
+          Technology consulting, AI advisory, and career education
         </div>
 
         {/* Pill tags */}
@@ -110,24 +110,22 @@ export default function OGImage() {
             marginTop: "40px",
           }}
         >
-          {["Workshops", "Career Guidance", "AI Tools", "Tech Industry"].map(
-            (tag) => (
-              <div
-                key={tag}
-                style={{
-                  padding: "10px 24px",
-                  borderRadius: 999,
-                  border: "1px solid rgba(251, 191, 36, 0.3)",
-                  background: "rgba(251, 191, 36, 0.1)",
-                  color: "#fbbf24",
-                  fontSize: 18,
-                  fontWeight: 600,
-                }}
-              >
-                {tag}
-              </div>
-            )
-          )}
+          {["Build", "Advise", "Teach"].map((tag) => (
+            <div
+              key={tag}
+              style={{
+                padding: "10px 24px",
+                borderRadius: 999,
+                border: "1px solid rgba(251, 191, 36, 0.3)",
+                background: "rgba(251, 191, 36, 0.1)",
+                color: "#fbbf24",
+                fontSize: 18,
+                fontWeight: 600,
+              }}
+            >
+              {tag}
+            </div>
+          ))}
         </div>
       </div>
     ),

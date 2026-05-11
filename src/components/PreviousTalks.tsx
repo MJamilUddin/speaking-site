@@ -10,29 +10,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { talks as allTalks } from "@/data/talks";
 
-const talks = [
-  {
-    id: "kl-event",
-    title: "Startup Industry Lessons",
-    location: "Kuala Lumpur, Malaysia",
-    organization: "SEEd.Lab",
-    organizationUrl: "https://www.seedlab.my/",
-    audience: "Startup Incubator",
-    description: "Shared insights and lessons from working in the startup industry with founders and early-stage teams.",
-    images: ["/kl event.jpg", "/kl event 2.jpeg"],
-  },
-  {
-    id: "skt-event",
-    title: "Breaking Into Tech",
-    location: "South Kilburn, London",
-    organization: "South Kilburn Trust",
-    organizationUrl: "https://www.southkilburntrust.org/",
-    audience: "Early Career Professionals",
-    description: "Guided aspiring tech professionals through the fundamentals of starting a career in the tech industry.",
-    images: ["/skt_event.jpg", "/skt_event_2.jpg"],
-  },
-];
+type Talk = typeof allTalks[number];
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -40,7 +20,11 @@ const fadeUp = {
   viewport: { once: true, margin: "-80px" },
 };
 
-export default function PreviousTalks() {
+interface PreviousTalksProps {
+  talks?: Talk[];
+}
+
+export default function PreviousTalks({ talks = allTalks }: PreviousTalksProps) {
   return (
     <section className="relative px-6 pt-8 pb-16 sm:pt-12 sm:pb-24">
       <div className="mx-auto max-w-6xl">

@@ -1,0 +1,170 @@
+export const workshops = [
+  {
+    id: "breaking-into-tech",
+    icon: "rocket" as const,
+    title: "Breaking Into Tech",
+    image: "/workshop-breaking-into-tech.jpg",
+    gradient: "from-amber-900/40 via-amber-800/30 to-amber-900/40",
+    accentColor: "text-amber-400",
+    borderColor: "border-amber-800/50",
+    overview:
+      "The tech industry offers huge opportunity, but most beginners don't know where to start or what role to pursue. This workshop provides a clear, realistic roadmap into tech and helps participants identify which career path fits their strengths, interests, and long-term goals. Instead of guessing what to learn or following random tutorials, attendees leave with a structured plan tailored to them.",
+    whoItsFor: [
+      "University students and recent graduates",
+      "Career switchers exploring tech",
+      "People learning online but feeling lost",
+      "Professionals unsure which tech role suits them",
+      "Anyone considering bootcamps or self-teaching",
+    ],
+    learningOutcomes: [
+      "How the tech industry is structured and where opportunities exist",
+      "The main entry routes into tech and how they differ",
+      "What different tech careers actually involve",
+      "Skills required for common roles",
+      "How to choose a role based on strengths and interests",
+      "How to create a realistic learning and transition plan",
+    ],
+    rolesExplored: [
+      "Frontend developer",
+      "Backend developer",
+      "Full stack developer",
+      "Product manager",
+      "Project manager",
+      "UI / UX designer",
+      "DevOps engineer",
+      "Data and analytics roles",
+    ],
+    agenda: [
+      "The modern tech landscape",
+      "Understanding entry pathways into the industry",
+      "Career role breakdowns",
+      "Matching strengths and interests to roles",
+      "Creating a personal roadmap",
+    ],
+    takeaways: [
+      "Personalised career direction",
+      "A step-by-step entry plan",
+      "Role comparison guide",
+      "Skills development roadmap",
+      "Recommended learning resources",
+    ],
+    format:
+      "Interactive workshop - Includes guided exercises and decision frameworks - Available in person or virtual",
+    results:
+      "Participants leave with clarity, direction, and a realistic plan to enter tech without wasted time or confusion.",
+  },
+  {
+    id: "day-to-day-reality",
+    icon: "briefcase" as const,
+    title: "Day-to-Day in Tech",
+    image: "/workshop-day-to-day.jpg",
+    gradient: "from-amber-900/40 via-amber-800/30 to-amber-900/40",
+    accentColor: "text-amber-400",
+    borderColor: "border-amber-800/50",
+    overview:
+      "Many people choose tech careers without understanding what the work actually feels like. Job titles sound exciting, but the daily responsibilities, collaboration, and workflows are often very different from expectations. This workshop gives a practical, behind-the-scenes look at how tech professionals really work. Participants gain insight into team dynamics, daily routines, and how digital products are actually built.",
+    whoItsFor: [
+      "People considering tech careers",
+      "Students preparing to enter the workforce",
+      "Career switchers wanting realistic expectations",
+      "Junior professionals starting their first role",
+    ],
+    learningOutcomes: [
+      "What a typical day looks like across different tech roles",
+      "How software teams operate",
+      "How products move from idea to launch",
+      "How engineers, designers, and product teams collaborate",
+      "What meetings, planning, and delivery cycles look like",
+      "Common workplace challenges and expectations",
+    ],
+    rolesExplored: [
+      "Developers",
+      "Product managers",
+      "Designers",
+      "DevOps engineers",
+      "Data professionals",
+    ],
+    agenda: [
+      "How modern tech teams are organised",
+      "The lifecycle of building a digital product",
+      "Daily workflows by role",
+      "Real examples of collaboration and decision making",
+      "Career progression and growth paths",
+    ],
+    interactiveElements: [
+      "Scenario walkthroughs of real work situations",
+      "Team workflow simulations",
+      "Role responsibility mapping",
+    ],
+    takeaways: [
+      "Clear understanding of day-to-day work",
+      "Realistic career expectations",
+      "Insight into workplace culture",
+      "Understanding of how roles interact",
+      "Confidence in choosing the right path",
+    ],
+    format:
+      "Interactive presentation with practical examples - Case study driven - Suitable for universities and career programmes",
+    results:
+      "Participants understand not just what jobs are called, but what professionals actually do each day and how tech teams function in the real world.",
+  },
+  {
+    id: "ai-modern-tools",
+    icon: "bot" as const,
+    title: "AI & Modern Tools",
+    image: "/workshop-ai-tools.jpg",
+    gradient: "from-amber-900/40 via-amber-800/30 to-amber-900/40",
+    accentColor: "text-amber-400",
+    borderColor: "border-amber-800/50",
+    overview:
+      "AI is transforming how professionals work across the tech industry. From writing code to designing products to managing projects, modern tools dramatically increase productivity and change how work gets done. This workshop shows how tech professionals actually use AI in real workflows and how beginners can start using these tools immediately.",
+    whoItsFor: [
+      "Students entering tech fields",
+      "Early-career professionals",
+      "Career switchers",
+      "Anyone wanting to work more efficiently with AI",
+      "Non-technical professionals working with tech teams",
+    ],
+    learningOutcomes: [
+      "How AI is changing the way tech teams work",
+      "Practical ways developers use AI daily",
+      "AI tools for design, research, and productivity",
+      "Prompting strategies for better results",
+      "When to rely on AI and when not to",
+      "How to build an AI-assisted workflow",
+    ],
+    toolsAndUseCases: [
+      "AI for coding assistance",
+      "AI for learning and research",
+      "AI for debugging and problem solving",
+      "AI for design and content generation",
+      "AI for project planning and documentation",
+    ],
+    agenda: [
+      "The role of AI in modern tech work",
+      "Real world use cases across different roles",
+      "Demonstrations of practical workflows",
+      "Building a personal AI toolkit",
+      "Responsible and effective AI usage",
+    ],
+    practicalActivities: [
+      "Live AI workflow demonstrations",
+      "Prompt design exercises",
+      "Task automation examples",
+      "Tool comparison guidance",
+    ],
+    takeaways: [
+      "Understanding of AI's role in tech careers",
+      "List of essential tools to use immediately",
+      "Practical workflow templates",
+      "Prompting techniques",
+      "Confidence using AI professionally",
+    ],
+    format:
+      "Demonstration based learning - Interactive exercises - Beginner friendly",
+    results:
+      "Participants gain practical skills to work faster, learn quicker, and operate like modern tech professionals using AI-enhanced workflows.",
+  },
+];
+
+export type Workshop = (typeof workshops)[number];

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,22 +18,22 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jamtech.dev";
 
 export const metadata: Metadata = {
   title: {
-    default: "Jam Tech — Tech Career Workshops & Speaking",
-    template: "%s | Jam Tech",
+    default: "JamTech — Build. Advise. Teach.",
+    template: "%s | JamTech",
   },
   description:
-    "Practical workshops that give students, graduates, and career switchers the clarity, skills, and real-world insight they need to break into the tech industry with confidence.",
+    "Technology consulting, AI advisory, and career education — built on real industry experience. JamTech helps startups and businesses design, build, and launch high-impact software.",
   keywords: [
-    "tech career workshops",
-    "breaking into tech",
-    "career switcher",
-    "tech speaking",
-    "workshop facilitator",
-    "AI tools workshop",
-    "frontend",
-    "backend",
+    "tech consultancy",
+    "software development",
+    "AI strategy",
+    "AI advisory",
+    "tech workshops",
+    "development consultancy",
+    "startup engineering",
+    "career workshops",
     "software engineering",
-    "career guidance",
+    "full stack developer",
   ],
   authors: [{ name: "Jamil Uddin" }],
   creator: "Jamil Uddin",
@@ -40,16 +42,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     url: siteUrl,
-    siteName: "Jam Tech",
-    title: "Jam Tech — Tech Career Workshops & Speaking",
+    siteName: "JamTech",
+    title: "JamTech — Build. Advise. Teach.",
     description:
-      "Practical workshops that give students, graduates, and career switchers the clarity, skills, and real-world insight they need to break into the tech industry with confidence.",
+      "Technology consulting, AI advisory, and career education — built on real industry experience.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jam Tech — Tech Career Workshops & Speaking",
+    title: "JamTech — Build. Advise. Teach.",
     description:
-      "Practical workshops that give students, graduates, and career switchers the clarity, skills, and real-world insight they need to break into the tech industry with confidence.",
+      "Technology consulting, AI advisory, and career education — built on real industry experience.",
   },
   robots: {
     index: true,
@@ -83,7 +85,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

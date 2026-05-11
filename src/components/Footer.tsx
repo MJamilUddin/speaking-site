@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Linkedin, Mail } from "lucide-react";
 import { JamTechLogo } from "@/components/JamTechLogo";
+import { site } from "@/data/site";
 
 export default function Footer() {
   return (
@@ -19,7 +20,7 @@ export default function Footer() {
               <JamTechLogo variant="footer" />
             </Link>
             <p className="max-w-xs text-sm text-muted">
-              Practical workshops for early-career tech professionals
+              Technology consulting, AI advisory, and career education.
             </p>
           </div>
 
@@ -27,15 +28,18 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <h3 className="text-sm font-semibold text-foreground">Navigation</h3>
             <div className="flex flex-col gap-2 text-sm text-muted">
-              <Link href="/#about" className="transition-colors hover:text-foreground">
-                About
+              <Link href="/build" className="transition-colors hover:text-foreground">
+                Build
               </Link>
-              <Link href="/#workshops" className="transition-colors hover:text-foreground">
-                Workshops
+              <Link href="/advise" className="transition-colors hover:text-foreground">
+                Advise
               </Link>
-              <a href="/contact" className="transition-colors hover:text-foreground">
+              <Link href="/teach" className="transition-colors hover:text-foreground">
+                Teach
+              </Link>
+              <Link href="/contact" className="transition-colors hover:text-foreground">
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -44,14 +48,14 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-foreground">Connect</h3>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:jamiluddin.eng@gmail.com"
+                href={`mailto:${site.email}`}
                 className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
               >
                 <Mail className="h-4 w-4" />
-                <span>jamiluddin.eng@gmail.com</span>
+                <span>{site.email}</span>
               </a>
               <a
-                href="https://www.linkedin.com/in/jamil-uddin-a44628174/"
+                href={site.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
@@ -66,7 +70,7 @@ export default function Footer() {
         {/* Bottom - Copyright */}
         <div className="mt-8 border-t border-card-border pt-6 text-center">
           <p className="text-xs text-muted">
-            &copy; {new Date().getFullYear()} Jam Tech. All rights reserved.
+            &copy; {new Date().getFullYear()} JamTech. All rights reserved.
           </p>
         </div>
       </div>
