@@ -13,7 +13,7 @@ export function JamTechLogo({ variant, className = "" }: JamTechLogoProps) {
   const box =
     variant === "footer"
       ? "h-11 w-[150px] sm:h-12 sm:w-[170px]"
-      : /* hero: mobile unchanged; sm/lg ~75% of prior desktop slot */ "h-[6.8rem] w-full max-w-[462px] sm:h-[4.5rem] sm:w-[252px] sm:max-w-none lg:h-[5.25rem] lg:w-[300px]";
+      : "h-[6.8rem] w-[min(calc(100vw-3rem),462px)] sm:h-[4.5rem] sm:w-[252px] lg:h-[5.25rem] lg:w-[300px]";
 
   const sizes =
     variant === "footer"

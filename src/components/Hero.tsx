@@ -50,7 +50,7 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-2">
         {/* Left side - Content with Gravity Blocks */}
-        <div className="relative pb-8 text-left lg:pb-48">
+        <div className="relative min-w-0 pb-8 text-left lg:pb-48">
           {/* Gravity blocks */}
           <div className="pointer-events-auto absolute inset-0 hidden lg:block" style={{ zIndex: 0 }}>
             <Gravity
@@ -80,12 +80,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="relative z-10 mb-8 flex w-full justify-start lg:mb-10"
+            className="relative z-10 mb-8 lg:mb-10"
           >
             <Link
               href="/"
               aria-label="JamTech home"
-              className="block w-full text-foreground"
+              className="block w-fit max-w-full text-foreground"
             >
               <JamTechLogo variant="hero" />
             </Link>
@@ -132,19 +132,26 @@ export default function Hero() {
           className="relative hidden lg:block"
         >
           <div className="relative h-[550px] w-[550px] xl:h-[700px] xl:w-[700px] -mr-24 xl:-mr-40">
-            <div className="relative h-full w-full" style={{
-              maskImage: "linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%), linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%), linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
-              maskComposite: "intersect",
-              WebkitMaskComposite: "source-in"
-            }}>
-              <Image
-                src="/hero-image.jpeg"
-                alt="Speaking at an event"
-                fill
-                className="object-cover object-center"
-                priority
-              />
+            <div className="relative h-full w-full overflow-hidden rounded-[1.75rem] shadow-2xl shadow-black/20 xl:rounded-[2.25rem]">
+              <div
+                className="relative h-full w-full"
+                style={{
+                  maskImage:
+                    "linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%), linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
+                  WebkitMaskImage:
+                    "linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%), linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
+                  maskComposite: "intersect",
+                  WebkitMaskComposite: "source-in",
+                }}
+              >
+                <Image
+                  src="/hero-image.jpeg"
+                  alt="Speaking at an event"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </motion.div>
